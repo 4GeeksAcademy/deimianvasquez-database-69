@@ -105,7 +105,7 @@ class Product(db.Model):
     name: Mapped[str] = mapped_column(String(80), nullable=False)
     price: Mapped[float] = mapped_column(Float(), nullable=False)
 
-    customerts: Mapped[list["Customer"]] = relationship(
+    customers: Mapped[list["Customer"]] = relationship(
         "Customer",
         secondary=customer_product,
         back_populates="products"
